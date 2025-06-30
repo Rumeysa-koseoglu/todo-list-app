@@ -1,0 +1,15 @@
+.todos-container {
+  display: flex;
+  flex: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid lightgray;
+  padding: 12px 5px 12px 5px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.icons {
+  font-size: 20px;
+  cursor: pointer;
+}
