@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import todoReducer from "../redux/TodoSlice";
 
+//we create the central data store with configureStore
 export const store = configureStore({
   reducer: {
     todo: todoReducer,

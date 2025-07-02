@@ -14,12 +14,14 @@ interface TodoProps {
 function Todo({ todoProps }: TodoProps) {
   const { id, content } = todoProps;
 
+  //we call the dispatch function to send an action to the Redux store
   const dispatch = useDispatch();
 
   const [editTask, setEditTask] = useState<boolean>(false);
 
   const [newTodo, setNewTodo] = useState<string>(content);
 
+  //runs removeTodoById action when the button is clicked. This action deletes the todo(task) by ID
   const handleRemoveTodo = () => {
     dispatch(removeTodoById(id));
   };
