@@ -5,7 +5,11 @@ import { CiEdit } from "react-icons/ci";
 import "../css/Todo.css";
 import type { TodoType } from "../types/Types";
 import { useDispatch } from "react-redux";
-import { removeTodoById, updateTodo } from "../redux/TodoSlice";
+import {
+  removeTodoById,
+  toggleCompleted,
+  updateTodo,
+} from "../redux/TodoSlice";
 
 interface TodoProps {
   todoProps: TodoType;
@@ -30,9 +34,14 @@ function Todo({ todoProps }: TodoProps) {
     const payload: TodoType = {
       id,
       content: newTodo,
+      completed: todoProps.completed,
     };
     dispatch(updateTodo(payload));
     setEditTask(false);
+  };
+
+  const handleToggleCompleted = () => {
+    dispatch(toggleCompleted(id));
   };
 
   return (
@@ -47,7 +56,16 @@ function Todo({ todoProps }: TodoProps) {
           }
         />
       ) : (
-        <div>{content}</div>
+        <div
+          onClick={handleToggleCompleted}
+          style={{
+            textDecoration: todoProps.completed ? "line-through" : "none",
+            color: todoProps.completed ? "gray" : "black",
+            cursor: "pointer",
+          }}
+        >
+          {content}
+        </div>
       )}
       <div>
         <IoIosRemoveCircleOutline

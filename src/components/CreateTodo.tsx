@@ -20,6 +20,7 @@ function CreateTodo() {
     const payload: TodoType = {
       id: Math.floor(Math.random() * 999999999), //we generate a random number using 'Math.random' to get a unique ID
       content: newTodo, //the task text written by the user
+      completed: false,
     };
     //we send "create a todo" command to Redux
     dispatch(createTodo(payload)); //calls the function in TodoSlice.jsx (and sends the command to Redux so the state updates)
