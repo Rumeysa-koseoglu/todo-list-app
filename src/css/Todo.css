@@ -3,10 +3,12 @@
   flex: row;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid lightgray;
-  padding: 12px 5px 12px 5px;
+  padding: 20px;
   margin-top: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
+  color: #9e78cf;
+  background-color: #20192a;
+  font-size: 16px;
 }
 
 .icons {
@@ -14,9 +16,20 @@
   cursor: pointer;
 }
 
+::placeholder {
+  font-family: "Quicksand";
+  color: #777777;
+  font-size: 16px;
+}
+
 .edit-input {
-  width: 400px;
+  width: 380px;
+  height: 20px;
   border: none;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #777777;
   outline: none;
+  background-color: transparent;
+  color: #9e78cf;
+  font-size: 16px;
+  font-family: "Quicksand";
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { IoIosRemoveCircleOutline } from "react-icons/io";
-import { CiCircleCheck } from "react-icons/ci";
+import { PiTrashSimpleLight } from "react-icons/pi";
+import { IoMdCheckmark } from "react-icons/io";
 import { CiEdit } from "react-icons/ci";
 import "../css/Todo.css";
 import type { TodoType } from "../types/Types";
@@ -60,7 +60,7 @@ function Todo({ todoProps }: TodoProps) {
           onClick={handleToggleCompleted}
           style={{
             textDecoration: todoProps.completed ? "line-through" : "none",
-            color: todoProps.completed ? "gray" : "black",
+            color: todoProps.completed ? "gray" : "#9e78cf",
             cursor: "pointer",
           }}
         >
@@ -68,17 +68,17 @@ function Todo({ todoProps }: TodoProps) {
         </div>
       )}
       <div>
-        <IoIosRemoveCircleOutline
-          onClick={handleRemoveTodo}
-          className="icons"
-          style={{ marginRight: "8px" }}
-        />
-
         {editTask ? (
-          <CiCircleCheck className="icons" onClick={handleUpdateTodo} />
+          <IoMdCheckmark className="icons" onClick={handleUpdateTodo} />
         ) : (
           <CiEdit className="icons" onClick={() => setEditTask(true)} />
         )}
+
+        <PiTrashSimpleLight
+          onClick={handleRemoveTodo}
+          className="icons"
+          style={{ marginLeft: "10px" }}
+        />
       </div>
     </div>
   );

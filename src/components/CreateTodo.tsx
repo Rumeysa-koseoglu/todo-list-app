@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createTodo } from "../redux/TodoSlice";
 import type { TodoType } from "../types/Types";
+import { GoPlus } from "react-icons/go";
+import "../css/CreateTodo.css";
 
 function CreateTodo() {
   const dispatch = useDispatch(); // in redux logic, we use dispatch to change a data
@@ -41,7 +43,7 @@ function CreateTodo() {
       />
       {/**thaks to the handleCreateTodo function , a new task will be added when the clear button is clicked */}
       <button onClick={handleCreateTodo} className="create-button">
-        create
+        <GoPlus />
       </button>
     </div>
   );
