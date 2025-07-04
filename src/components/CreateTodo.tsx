@@ -37,6 +37,11 @@ function CreateTodo() {
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setNewTodo(e.target.value)
         }
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            handleCreateTodo();
+          }
+        }}
         className="todo-input"
         type="text"
         placeholder="enter a task.."
