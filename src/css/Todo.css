@@ -1,4 +1,4 @@
-.todos-container {
+.todo-container {
   display: flex;
   flex: row;
   align-items: center;
@@ -9,6 +9,16 @@
   color: #9e78cf;
   background-color: #20192a;
   font-size: 16px;
+  width: 500px;
+  box-sizing: border-box;
+}
+
+.todo-content {
+  max-width: 400px;
+}
+
+.icons-container {
+  width: 50px;
 }
 
 .icons {

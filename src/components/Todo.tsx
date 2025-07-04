@@ -45,7 +45,7 @@ function Todo({ todoProps }: TodoProps) {
   };
 
   return (
-    <div className="todos-container">
+    <div className="todo-container">
       {editTask ? (
         <input
           className="edit-input"
@@ -57,6 +57,7 @@ function Todo({ todoProps }: TodoProps) {
         />
       ) : (
         <div
+          className="todo-content"
           onClick={handleToggleCompleted}
           style={{
             textDecoration: todoProps.completed ? "line-through" : "none",
@@ -67,7 +68,7 @@ function Todo({ todoProps }: TodoProps) {
           {content}
         </div>
       )}
-      <div>
+      <div className="icons-container">
         {editTask ? (
           <IoMdCheckmark className="icons" onClick={handleUpdateTodo} />
         ) : (
